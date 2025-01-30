@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About - Little John</title>
+    <link rel="icon" type="image/x-icon" href="web-assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+
+    <style>
+        :root {
+            --navy: #1B294B;
+            --primary-blue: #4361ee;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #E5E5E5;
+            color: var(--navy);
+        }
+
+        .nav-link {
+            color: var(--navy);
+            font-size: 1rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        .btn-primary {
+            background-color: var(--navy);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+
+        .story-link {
+            color: var(--navy);
+            text-decoration: underline;
+        }
+
+        .story-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .profile-image {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="web-assets/little-john-text.png" alt="Little John" class="h-16" href="/">
+        </div>
+        <div class="flex items-center space-x-8">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/about" class="nav-link underline">About</a>
+            <a href="https://waitlist.heylittlejohn.com" class="btn-primary">Join the waitlist!</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pt-8">
+        <h1 class="text-6xl font-semibold mb-10">The Story</h1>
+
+        <div class="flex flex-col md:flex-row justify-between items-start gap-16">
+            <div class="flex-1 space-y-4 story-text">
+                <p>Hey, I'm <a href="https://x.com/thehirschibar" class="story-link">Jody Hirschi</a>, the founder of
+                    Little John.</p>
+
+                <p>I'm a Machine Learning Engineer with a passion for helping the everyday person first choose to
+                    invest, and to then succeed at it. I studied Finance at BYU, and was trained in Machine Learning at
+                    Capital One, Mastercard, and grad school at Georgia Tech. I've spent many years helping startups
+                    (both my own, and others) scale their use of data and ML systems.</p>
+
+                <p>Most importantly, I'm a husband to <a href="https://x.com/thehirschibar/status/1826246632553197737"
+                        class="story-link">an incredibly supportive wife and
+                        father of 3</a>.</p>
+
+                <p>Little John is the result of a yearlong passion project to build tools that I myself wanted as I
+                    figured out how to sell options to produce steady income. I'd dream of <b>building a simulator</b>
+                    to help
+                    me map my trades, and of building <a href="https://en.wikipedia.org/wiki/Reinforcement_learning"
+                        class="story-link"><b>Reinforcement Learning agents
+                            that
+                            could essentially help me "beat the game"</b></a> by finding the optimal positions and
+                    decisions to
+                    help me maximize my risk reward.</p>
+
+                <p>Last year we decided to jump full-time into build this, and I'm incredibly excited to start rolling
+                    it out to you here.</p>
+
+                <p>Investing brings risk, but when you know how to manage it, it also presents great opportunity.</p>
+
+                <p class="font-semibold">Happy Investing!</p>
+            </div>
+
+            <div class="flex-shrink-0">
+                <img src="web-assets/profile-pic.jpg" alt="Jody Hirschi" class="profile-image">
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+</body>
+
+</html>
+</body>
+
+</html>

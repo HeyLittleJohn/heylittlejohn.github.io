@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>Little John</title>
+    <link rel="icon" type="image/x-icon" href="web-assets/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+
+    <style>
+        :root {
+            --primary-blue: #1B6DFC;
+            --light-blue: #ABC9FF;
+            --navy: #1B294B;
+            --beige: #E5E5E5;
+        }
+
+        body {
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy) 60%, rgba(255, 255, 255, 0.1) 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 64px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            max-width: 1400px;
+            margin: 6rem auto 4rem;
+            gap: 4rem;
+            flex: 1;
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8rem;
+        }
+
+        .content-left {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .content-right {
+            flex: 1;
+            min-width: 600px;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 2.5rem;
+            max-width: 900px;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .highlight {
+            color: var(--light-blue);
+        }
+
+        .strong-text {
+            color: white;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--navy);
+            padding: 0.75rem 1.75rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-outline {
+            background-color: white;
+            color: var(--navy);
+            padding: 0.75rem 1.75rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid white;
+        }
+
+        .btn-outline:hover {
+            opacity: 0.9;
+        }
+
+        .simulation-card {
+            background-color: white;
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .simulation-card img {
+            width: 100%;
+            height: auto;
+            min-width: 600px;
+        }
+
+        /* Social Section */
+        .social-section {
+            background-color: var(--beige);
+            padding: 4rem 2rem;
+            color: #000;
+        }
+
+        .social-section h2 {
+            color: #000;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .btn-navy {
+            background-color: var(--navy);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            min-width: 200px;
+        }
+
+        .btn-navy:hover {
+            opacity: 0.9;
+        }
+
+        .screenshot-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+                margin-top: 3rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .content-left {
+                max-width: 100%;
+            }
+
+            .content-right {
+                min-width: auto;
+            }
+
+            .simulation-card img {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-section">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <img src="web-assets/little-john-text.png" alt="Little John">
+            </div>
+            <div class="nav-links">
+                <a href="/" class="text-white">Home</a>
+                <a href="/new-about.html" class="text-white">About</a>
+                <a href="https://waitlist.heylittlejohn.com" class="btn-outline">Join the waitlist!</a>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <h1 class="hero-title">Risk Management tools for Options Traders</h1>
+            <div class="content-wrapper">
+                <div class="content-left">
+                    <p class="hero-description">
+                        <span class="highlight">Utilize cutting edge </span>
+                        <span class="strong-text">statistical and Machine Learning tool suite</span>
+                        <span class="highlight"> to minimize your risk and maximize your returns.</span>
+                    </p>
+                    <p class="hero-description highlight">
+                        Little John is the trusted companion for Robinhood* users that sell options
+                    </p>
+                    <p class="text-sm text-gray-400 mb-8">
+                        *(and any other brokerage platform too. Not affiliated with Robinhood)
+                    </p>
+                    <a href="https://waitlist.heylittlejohn.com" class="btn-primary">Join the Waitlist!</a>
+                </div>
+                <div class="content-right">
+                    <div class="simulation-card">
+                        <img src="web-assets/portfolio-chart.png" alt="Portfolio Simulation" class="w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media Section -->
+    <section class="social-section">
+        <div class="container max-w-7xl mx-auto px-4 text-center">
+            <h2>Follow us on 𝕏</h2>
+
+            <div class="flex justify-center gap-4 mb-8">
+                <a href="https://x.com/heylittlejohn" class="btn-navy">@HEYLITTLEJOHN</a>
+                <a href="https://x.com/thehirschibar" class="btn-navy">@THEHIRSCHIBAR</a>
+            </div>
+
+            <p class="text-lg mb-16">
+                And <span class="text-primary-blue font-semibold">SUBSCRIBE</span>
+                to our founder
+                <a href="https://x.com/thehirschibar" class="text-primary-blue">@thehirschibar</a>
+                for discounts, competitions, games, and more!
+            </p>
+
+            <!-- Product Screenshots Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="screenshot-card">
+                    <img src="web-assets/recorder.png" alt="Portfolio Value Chart" class="w-full">
+                </div>
+                <div class="screenshot-card">
+                    <img src="web-assets/strat-explorer.png" alt="Strategy Explorer" class="w-full">
+                </div>
+                <div class="screenshot-card">
+                    <img src="web-assets/options-container.png" alt="Option Analysis" class="w-full">
+                </div>
+                <div class="screenshot-card">
+                    <img src="web-assets/options-chain.png" alt="Option Chain" class="w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

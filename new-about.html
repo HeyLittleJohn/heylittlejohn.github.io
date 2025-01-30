@@ -74,6 +74,182 @@
             }
         }
     </style>
+    <style>
+        /* Hamburger menu styles */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+
+        .mobile-menu-button span {
+            width: 30px;
+            height: 3px;
+            background-color: var(--navy);
+            border-radius: 10px;
+            transition: all 0.3s linear;
+            position: relative;
+            transform-origin: 1px;
+        }
+
+        /* Homepage (navy background) specific styles */
+        .hero-section .mobile-menu-button span {
+            background-color: white;
+        }
+
+        /* When menu is active, force navy color */
+        .mobile-menu.active~.mobile-menu-button span {
+            background-color: var(--navy) !important;
+        }
+
+        /* Mobile menu background color */
+        .hero-section .mobile-menu {
+            background-color: white;
+        }
+
+        /* Mobile menu text color */
+        .hero-section .mobile-menu .nav-link {
+            color: var(--navy) !important;
+        }
+
+        /* Mobile menu button color in hero section */
+        .hero-section .mobile-menu .btn-primary {
+            background-color: var(--navy) !important;
+            color: white !important;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: 100%;
+            background: white;
+            padding: 2rem;
+            transition: right 0.3s ease-in-out;
+            z-index: 9;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-button {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none !important;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            /* Homepage (navy background) specific mobile menu styles */
+            .hero-section .mobile-menu {
+                background: var(--navy);
+            }
+
+            .hero-section .mobile-menu .nav-link {
+                color: white !important;
+            }
+
+            /* About page specific mobile menu styles */
+            body:not(.hero-section) .mobile-menu {
+                background: white;
+            }
+
+            body:not(.hero-section) .mobile-menu .nav-link {
+                color: var(--navy) !important;
+            }
+
+            .mobile-menu .nav-link {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin: 1rem 0;
+                font-size: 1.25rem;
+                color: var(--navy) !important;
+            }
+
+            /* Special styling for waitlist button in mobile menu */
+            .mobile-menu .btn-primary,
+            .mobile-menu .btn-outline {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin: 1rem 0;
+                font-size: 1.25rem;
+                background-color: var(--navy) !important;
+                color: white !important;
+                border: none !important;
+            }
+
+            /* Hero section adjustments */
+            .hero-title {
+                font-size: 2.5rem !important;
+                text-align: center !important;
+                margin-bottom: 2rem !important;
+            }
+
+            .content-wrapper {
+                flex-direction: column !important;
+                gap: 2rem !important;
+                padding: 1rem !important;
+            }
+
+            .content-left {
+                width: 100% !important;
+                max-width: 100% !important;
+                text-align: center !important;
+            }
+
+            .content-right {
+                width: 100% !important;
+                min-width: unset !important;
+            }
+
+            .simulation-card {
+                padding: 1rem !important;
+            }
+
+            .simulation-card img {
+                min-width: unset !important;
+                width: 100% !important;
+            }
+
+            /* About page specific */
+            .profile-image {
+                width: 250px !important;
+                height: 250px !important;
+                margin: 0 auto !important;
+            }
+
+            .story-text {
+                font-size: 1rem !important;
+                text-align: left !important;
+            }
+
+            /* Social section adjustments */
+            .social-section .grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .screenshot-card {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -83,11 +259,24 @@
             <img src="web-assets/little-john.png" alt="Little John" class="h-16">
             <h4 class="text-3xl font-semibold ml-4">Little John</h4>
         </div>
-        <div class="flex items-center space-x-8">
+
+        <div class="nav-links">
             <a href="/new_index.html" class="nav-link">Home</a>
-            <a href="/about" class="nav-link underline">About</a>
+            <a href="/new-about.html" class="nav-link">About</a>
             <a href="https://waitlist.heylittlejohn.com" class="btn-primary">Join the waitlist!</a>
         </div>
+
+        <div class="mobile-menu">
+            <a href="/new_index.html" class="nav-link">Home</a>
+            <a href="/new-about.html" class="nav-link">About</a>
+            <a href="https://waitlist.heylittlejohn.com" class="btn-primary">Join the waitlist!</a>
+        </div>
+
+        <button class="mobile-menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
     <!-- Main Content -->
@@ -131,12 +320,16 @@
             </div>
         </div>
     </main>
-</body>
+    <script>
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
 
-</html>
-</body>
-
-</html>
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 
 </html>
